@@ -2,10 +2,10 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: https://github.com/yangjucai
 date_format: "ordinal"
 title: 码志
-subtitle: "公众号：闷骚的程序员"
+subtitle: "JC's Blog"
 description: "马壮的个人博客，公众号：闷骚的程序员"
 keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
 timezone: Asia/Shanghai
