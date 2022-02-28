@@ -4,10 +4,10 @@
 baseurl:
 url: https://yangjucai.github.io
 date_format: "ordinal"
-title: 易安
+title: 初九
 subtitle: "JC's Blog"
 description: "JC's Blog"
-keywords: 易安, JC, yangjucai, Blog, undergraduate
+keywords: 初九, JC, yangjucai, Blog, undergraduate
 timezone: Asia/Shanghai
 encoding: "utf-8"
 repository: yangjucai/yangjucai.github.io
