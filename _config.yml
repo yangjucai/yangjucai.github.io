@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://github.com/yangjucai
+url: https://yangjucai.github.io
 date_format: "ordinal"
 title: 易安
 subtitle: "JC's Blog"
