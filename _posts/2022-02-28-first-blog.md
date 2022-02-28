@@ -2,11 +2,16 @@
 layout: post
 title: JC's First Blog
 categories: Whatever
-description: This is the description about JC's First Blog.
-keywords: JC First Blog
+description: JC's 考研日记
+keywords: JC 考研日记
 ---
 
-不是吧不是吧，不会真的有人看我的博客吧！！！
+JC's 考研日记
+
+### 22.02.28
+
+今天把博客搭起来了，找了一个模板，配了一下，还挺好看，正好可以用一个专栏写日记。
+虽然今天才开始写考研日记，但我的考研复习已经开始one week + 了哦（好吧，又不早 :) ) 
 
 ![](https://cdn.jsdelivr.net/gh/yangjucai/yangjucai.github.io@main/images/posts成果 楼梯口 美女 超高清 4电脑壁纸 4k手机壁纸_图片编号329858_壁纸网.jpeg)
 
