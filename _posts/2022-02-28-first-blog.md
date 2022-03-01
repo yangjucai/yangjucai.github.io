@@ -1,7 +1,7 @@
 ---
 layout: post
-title: JC's First Blog
-categories: Whatever
+title: JC's 考研日记
+categories: 考研
 description: JC's 考研日记
 keywords: JC 考研日记
 ---
