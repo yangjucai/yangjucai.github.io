@@ -9,6 +9,7 @@ subtitle: "JC's Blog"
 description: "JC's Blog"
 keywords: 初九, JC, yangjucai, Blog, undergraduate
 #timezone: Asia/Shanghai
+markdown: kramdown
 encoding: "utf-8"
 repository: yangjucai/yangjucai.github.io
 # 对 css 和 js 资源的 cdn 加速配置
