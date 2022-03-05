@@ -1,18 +1,18 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: This is JC's Blog
+keywords: JC
 comments: true
 menu: 关于
 permalink: /about/
 ---
 
-我是马壮，码而生，码而立。
+This is JC's Blog.
 
-仰慕「优雅编码的艺术」。
+I'm Jucai Yang, u can call me JC.
 
-坚信熟能生巧，努力改变人生。
+Love to share with u what i know.
 
 ## 联系
 
