@@ -12,9 +12,9 @@ permalink: /donate/
 > 
 > Did some tiny things, consider buying me a cup of coffee if it helps you.
 
-<!-- ## Paypal -->
+<!-- ## Paypal
 
-[Donate via Paypal](https://paypal.me/mzlogin)
+[Donate via Paypal](https://paypal.me/mzlogin) -->
 
 ## 微信 / Wechat
 
