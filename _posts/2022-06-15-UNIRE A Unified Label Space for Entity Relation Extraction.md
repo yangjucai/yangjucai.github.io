@@ -1,6 +1,6 @@
 ---
 layout: post
-title: UNIRE: A Unified Label Space for Entity Relation Extraction
+title: UNIRE
 categories: [paper translation, entity relation extration]
 description: UNIRE: A Unified Label Space for Entity Relation Extraction
 keywords: entity relation extraction
