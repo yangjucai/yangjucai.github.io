@@ -28,7 +28,7 @@ keywords: entity relation extraction
 
 从纯文本中提取结构化信息是自然语言处理中的长期研究课题。典型的，它的目的是识别特定的实体和关系来分析句子的语义。一个例子如图一所示，一个人物实体”David Perkins“和一个地理实体”California“有一个物理位置关系PHYS。
 
-![image-20220623091020720](../../../../AppData/Roaming/Typora/typora-user-images/image-20220623091020720.png)
+![image-20220623091020720](https://cdn.jsdelivr.net/gh/yangjucai/yangjucai.github.io@main/images/postsimage-20220623091020720.png)
 
 识别实体和关系的方法可以被归类为流水线模型和联合模型。在流水线模型的设置中，实体模型和关系模型是独立并拥有分离的特征空间和输出label空间。另一方面，在联合模型的设置中，一些共享特征空间或者交互解码的参数被用于探讨两种任务的共同结构。人们普遍认为联合模型可能更好因为他们能够在子模型中减少错误的传播，有更少参数集和在两种任务上的统一编码先验知识（例如，约束）。
 
