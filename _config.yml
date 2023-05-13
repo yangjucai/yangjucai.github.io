@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://www.yangjucai.com
+url: https://yangjucai.github.io/
 date_format: "ordinal"
 title: 初九
 subtitle: "JC's Blog"
@@ -38,7 +38,7 @@ components:
     # 修改图片请替换 assets/images/qrcode.jpg
     qrcode:
         enabled: true
-        image_alt: 闷骚的程序员
+        image_alt: call me JC
     # 维基索引页使用哪种视图，支持 列表（list）/分类（cate）
     wiki:
         view: cate
@@ -91,9 +91,9 @@ navs:
     href: /about/
     label: 关于
 
-  -
-    href: /donate/
-    label: 捐赠
+#   -
+#     href: /donate/
+#     label: 捐赠
 
 # ---------------- #
 #       RSS        #
