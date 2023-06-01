@@ -8,7 +8,7 @@ keywords: Zero-Knowledge
 
 # Proof System
 
-[video]: https://www.youtube.com/watch?v=6uGimDYZPMw
+video: https://www.youtube.com/watch?v=6uGimDYZPMw
 
 ![image-20230601203511202](https://cdn.jsdelivr.net/gh/yangjucai/picgo@main/image-20230601203511202.png)
 
@@ -58,7 +58,7 @@ a zero-knowledge proof for QR_N:
 
 ## Definition of "Perfect Zero-knowledge"
 
-[video]: https://www.youtube.com/watch?v=cQ-BI1WWzjU
+video : https://www.youtube.com/watch?v=cQ-BI1WWzjU
 
 ![image-20230601212732851](https://cdn.jsdelivr.net/gh/yangjucai/picgo@main/image-20230601212732851.png)
 
