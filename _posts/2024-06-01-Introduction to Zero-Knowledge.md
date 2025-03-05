@@ -2,7 +2,7 @@
 layout: post
 title: SNARK性能评估与优化路径详解
 categories: [ZK]
-description: Measuring SNARK performance: Frontends, backends, and the future
+description: SNARK性能评估与优化路径详解
 keywords: Zero-Knowledge
 ---
 
