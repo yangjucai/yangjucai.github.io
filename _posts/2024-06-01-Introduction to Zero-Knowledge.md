@@ -15,15 +15,16 @@ keywords: Zero-Knowledge
 ### 1.1 定义与核心特性
 - **SNARK** (Succinct Non-interactive Arguments of Knowledge)
 - 核心优势：
-  - Succinct 简洁性：证明长度远小于原始数据
+  - Succinct 简洁性：证明长度远小于原始数据; easy to verify;
   - Non-interactive 非交互式：单次通信完成验证
   - Arguments of Knowledge 知识证明：确保证明者确实持有有效数据
 
 ### 1.2 应用场景
-- 区块链扩展（Layer2 Rollups）
-- 隐私保护交易
+- 区块链扩容（Layer2 Rollups）
+- 隐私保护交易 (ZCash)
 - 去中心化计算验证
-- 典型以太坊上gas消耗案例：
+  - 经典证明在以太坊上gas消耗案例：
+
   | 方案      | Gas消耗量 |
   | --------- | --------- |
   | PlonK     | 290,000   |
@@ -71,14 +72,14 @@ graph TD
    - Direct witness checking takes much less than one second on a laptop.
 2. 前端开销很小
    - Direct witness checking is particularly amenable to representation in a circuit
-3. 接受长时证明生成（天级）或具备并行计算资源
+3. 接受长时证明生成（xx天为级别）或具备并行计算资源
    - You are willing to wait days for the SNARK prover to finish, and/or pay for huge parallel compute resources.
 
 
 
 ## 4. 前端实现方案
 
-### 4.1 CPU emulator/虚拟机方案
+### 4.1 CPU emulator/虚拟机 (zkVM) 方案
 
 |                     项目                      |                            指令集                            |                          电路转换率                          |       当前进展       |
 | :-------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :------------------: |
@@ -86,14 +87,22 @@ graph TD
 |         RISC Zero<br>（CPU emulator）         | RISC-V开源架构：<br>简单指令集，比复杂指令集（x86, ARM）更容易处理 | As of May, RISC Zero is turning programs executing *T* primitive RISC-V instructions into <br>**degree-5 AIRs with 3*T* rows and 160 columns<br>**~500门/*T*指令 in RISC-V CPU |      持续优化中      |
 | zkEVM:<br>zkSync 2.0, Scroll, Polygon's zkEVM | EVM:<br>无指令集，将高级语言如Solidity程序转换为电路之前编译为其他汇编语言 |              Performance results are pending...              | 开发中（多方案竞争） |
 
-### 4.2 ASIC方案 (Application Specific Integrated Circuit)
+### 4.2 ASIC方案 (Application Specific Integrated Circuit) or FPGA加速器
 
 - 优势：特定程序电路优化 
   - （对比CPU emulator方案：RISC-V and Cairo produce a single circuit that can handle all programs in the associated assembly language）
 - 局限：
   - 不支持动态控制流
+    - 不支持未预定迭代边界的循环： not known how to support loops without predetermined iteration bounds. 
 
-### 4.3 有限域运算挑战
+### 4.3 使用快速的有限域
+
+- **Goldilocks**域： $2^{64}-2^{32}+1$
+
+  - 优势：
+    - 这种特殊的结构的域 运算速度比其他域快几倍
+  - 局限：
+    - 仅自然支持32位数字的算术运算
 
 - 主流方案域大小： $>2^{128}$
 
@@ -106,10 +115,13 @@ graph TD
 |     类型     |                           核心操作                           |              典型方案              |     复杂度     |
 | :----------: | :----------------------------------------------------------: | :--------------------------------: | :------------: |
 | 基于离散对数 |                多指数运算multi-exponentiation                | KZG/Bullteproofs/Dory/Hyrax-commit | O(n) group ops |
-|    FFT系     | large FFTs: <br>bottlenecked by **memory bandwidth** than by field operations. |                FRI                 |   O(n log n)   |
-|    哈希系    | Merkle-hashing:<br> typically a bottleneck only if the circuit is small |               Ligero               |  O(n) hashes   |
+|   基于FFT    | large FFTs: <br>bottlenecked by **memory bandwidth** than by field operations. |         FRI、Ligero-commit         |   O(n log n)   |
+|   基于哈希   | Merkle-hashing:<br> typically a bottleneck only if the circuit is small |           Merkle-hashing           |  O(n) hashes   |
 
 - 基于离散对数：
+  - involves a multi-exponentiation：
+    -  In SNARKs, this degree is typically the size |*C*| of the circuit *C*.
+    - a multi-exponentiation of size |*C*| requires about 1.5·|*C*|·log |*G*|≈ 400·|*C*| group operations, where |*G*| denotes the number of elements in the group *G*. 
   - Spartan: 
     - 使用 Hyrax 多项式承诺, 必须执行 $|C|^{1/2}$ 多个多重指数，每个指数的大小为 $|C|^{1/2}$，将 Pippenger 算法的加速比降低了大约 2 倍。
   - Groth16:
@@ -128,7 +140,13 @@ graph TD
    - 实现方式：$π_{agg}=SNARK\_agg\_prove(π_1,...,π_k)$
    - 优势：降低链上验证成本; 减少上链成本；
 
-## 6. 未来优化方向
+## 6.其他性能瓶颈
+
+- memory：
+  - 100 billion gates =>  tens or hundreds of terabytes of space for Prover.
+- trusted setup
+
+## 7. 未来优化方向
 
 ### 6.1 硬件加速
 
